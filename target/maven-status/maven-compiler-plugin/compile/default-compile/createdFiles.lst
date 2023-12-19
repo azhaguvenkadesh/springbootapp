@@ -1,0 +1,6 @@
+com\example\springapp\controller\JobController.class
+com\example\springapp\repository\JobRepository.class
+com\example\springapp\model\Job.class
+com\example\springapp\config\SwaggerConfig.class
+com\example\springapp\SpringappApplication.class
+com\example\springapp\service\JobService.class
