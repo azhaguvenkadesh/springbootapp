@@ -4,11 +4,11 @@ phases:
     commands:
     - echo Logging in to Amazon ECR....
     - aws --version
-    #- $(aws ecr get-login --region ap-south-1 --no-include-email)
-    - aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 358325425581.dkr.ecr.ap-south-1.amazonaws.com
+    #- $(aws ecr get-login --region us-east-2 --no-include-email)
+    - aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/z2t7r8e9
     -
     # Replace with this to your repository URI
-    - REPOSITORY_URI=358325425581.dkr.ecr.ap-south-1.amazonaws.com/spring-demo-ecr
+    - REPOSITORY_URI=public.ecr.aws/z2t7r8e9/jspringbapp
     - IMAGE_TAG=build-$(echo $CODEBUILD_BUILD_ID | awk -F":" '{print $2}')
   build:
     commands:
@@ -34,4 +34,4 @@ phases:
 artifacts:
   files:
   - imagedefinitions.json
-  - target/springboot-aws-deploy.jar
+  - target/springapp-0.0.1-SNAPSHOT.jar
