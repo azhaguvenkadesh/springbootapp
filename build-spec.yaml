@@ -8,7 +8,7 @@ phases:
     - aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/z2t7r8e9
     -
     # Replace with this to your repository URI
-    - REPOSITORY_URI=public.ecr.aws/z2t7r8e9/jspringbapp
+    - REPOSITORY_URI=013877434595.dkr.ecr.us-east-1.amazonaws.com/springbootapp
     - IMAGE_TAG=build-$(echo $CODEBUILD_BUILD_ID | awk -F":" '{print $2}')
   build:
     commands:
