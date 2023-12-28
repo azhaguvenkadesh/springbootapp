@@ -5,7 +5,7 @@ phases:
     - echo Logging in to Amazon ECR....
     - aws --version
     #- $(aws ecr get-login --region us-east-2 --no-include-email)
-    - aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/z2t7r8e9
+    - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 013877434595.dkr.ecr.us-east-1.amazonaws.com
     -
     # Replace with this to your repository URI
     - REPOSITORY_URI=013877434595.dkr.ecr.us-east-1.amazonaws.com/springbootapp
